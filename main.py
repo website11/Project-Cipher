@@ -1,16 +1,51 @@
-# This is a sample Python script.
+from CaesarCipher import CaesarCipher
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+def caesar_cipher():
+    print("Caesar Cipher Options\n")
+    while True:
+        print("1. Encrypt Message")
+        print("2. Manual Decrypt (with key)")
+        print("3. Automatic Decrypt (no key)")
+        print("4. Back")
+        choice = input("Select an Option (ex. 1):\n")
+        # Encryption
+        if choice == "1":
+            message = input("Enter Message To Encrypt: \n")
+            shift = input("Enter Shift Amount (up to 25): \n")
+
+            # Convert shift to an integer
+            try:
+                shift = int(shift)
+            except ValueError:
+                print("Invalid Shift - not a number")
+                return
+
+            # Check if shift is greater than 25
+            if shift > 25:
+                print("Invalid Shift - greater than 25")
+                return
+
+            # Valid Shift
+            cipher = CaesarCipher(shift)
+            print(cipher)
+
+        elif choice == "4":
+            break
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print("Project Cipher\n")
+    while True:
+        print("Select a Cipher")
+        print("1. Caesar Cipher")
+        print("2. Exit")
+        choice = input("Select an Option (ex. 1):\n")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+        # Caesar Cipher
+        if choice == "1":
+            caesar_cipher()
+
+        elif choice == "2":
+            break
+        else:
+            print("Input Not Valid\n")
