@@ -27,7 +27,9 @@ def caesar_cipher():
 
             # Valid Shift
             cipher = CaesarCipher(shift)
-            print(cipher)
+            encrypted_message = cipher.encrypt(message)
+            print(encrypted_message)
+            print("")
 
         elif choice == "4":
             break
