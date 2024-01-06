@@ -1,5 +1,6 @@
 import enchant
 import re
+import os
 
 d = enchant.Dict("en_US")
 
@@ -11,12 +12,12 @@ def get_valid_shift():
     try:
         shift = int(shift)
     except ValueError:
-        print("Invalid Shift - not a number")
+        print("Invalid Shift - not a number\n")
         return None
 
     # Check if shift is greater than 25
     if shift > 25:
-        print("Invalid Shift - greater than 25")
+        print("Invalid Shift - greater than 25\n")
         return None
 
     # Return the valid shift
@@ -73,6 +74,10 @@ def caesar_cipher():
         # Auto-Decryption
         elif choice == "3":
             file = input("Enter File to Decrypt (One Phrase per Line):\n")
+            if not os.path.isfile(file):
+                print("File does not exist. Please check the filename and try again.\n")
+                continue
+
             threshold = input("Enter # of English Dictionary Words Threshold:\n")
             upDown = input("Shifted Up or Down? (Up/Down):\n")
             if upDown.lower() != "up" and upDown.lower() != "down":
