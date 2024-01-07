@@ -24,7 +24,7 @@ def get_valid_shift():
     return shift
 
 
-def caesar_cipher():
+def caesar_cipher_menu():
     print("Caesar Cipher Options\n")
     while True:
         # Options
@@ -97,6 +97,8 @@ def caesar_cipher():
                 print("")
         elif choice == "4":
             break
+        else:
+            print("Invalid Option\n")
 
 
 class CaesarCipher:
