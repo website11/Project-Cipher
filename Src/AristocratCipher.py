@@ -10,9 +10,11 @@ def aristocrat_menu():
         if choice == "1":
             print("Work-In-Progress\n")
         elif choice == "2":
-            encrypted_message = input("Enter Message To Decrypt: \n")
-            aristocrat_solver = AristocratHelper(encrypted_message)
-            aristocrat_solver.decrypt_solver()
+            message_file = input("Enter File To Decrypt: \n")
+            with open(message_file, "r") as f:
+                encrypted_msg = f.read()
+                aristocrat_solver = AristocratHelper(encrypted_msg)
+                aristocrat_solver.decrypt_solver()
         elif choice == "3":
             break
         else:
@@ -33,8 +35,16 @@ class AristocratHelper:
                 empty_message += char
         return empty_message
 
+    def apply_letter_to_solver(self, solver, letter_to_replace, replacement_letter):
+        updated_solver = list(solver)
+        for i, letter in enumerate(self.encrypted_message):
+            if letter == letter_to_replace:
+                updated_solver[i] = replacement_letter
+        return "".join(updated_solver)
+
     def decrypt_solver(self):
         solver = self.create_empty_message()[:]
+        used_letters = {}
         while True:
             print("Encrypted View:")
             print(self.encrypted_message)
@@ -45,6 +55,7 @@ class AristocratHelper:
             print("Complete View:")
             print(self.current_message)
             print("--------------------------")
+            print("Used Letters: " + str(list(used_letters.values())))
 
             print("1. Replace a Letter (ex. A->C)       2. Show Frequency Table")
             print("3. Receive an Automated Hint (WIP)   4. Check Possible Answer")
@@ -53,7 +64,12 @@ class AristocratHelper:
             if choice == "1":
                 letter_to_replace = input("Enter the letter to replace: \n")
                 replacement_letter = input("Enter the replacement letter: \n")
-                # solver = solver.replace(letter_to_replace, replacement_letter)
+                if letter_to_replace.isalpha() and replacement_letter.isalpha():
+                    used_letters[letter_to_replace] = replacement_letter
+                    solver = self.apply_letter_to_solver(solver, letter_to_replace, replacement_letter)
+                    self.current_message = self.apply_letter_to_solver(self.current_message, letter_to_replace, replacement_letter)
+                else:
+                    print("Invalid input. Please enter alphabetic characters only.")
             elif choice == "2":
                 print("Work-In-Progress\n")
                 # self.show_frequency_table()
@@ -61,5 +77,9 @@ class AristocratHelper:
                 print("Work-In-Progress\n")
             elif choice == "4":
                 break
+            elif choice == "5":
+                solver = self.create_empty_message()[:]
+                self.current_message = self.encrypted_message[:]
+                used_letters = {}
             else:
                 print("Invalid Option\n")
