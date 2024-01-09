@@ -104,7 +104,7 @@ class AristocratHelper:
             print("Used Letters: " + str(list(used_letters.values())))
 
             print("1. Replace a Letter (ex. A->C)       2. Show Frequency Table")
-            print("3. Receive an Automated Guess (WIP)   4. Check Possible Answer")
+            print("3. Receive an Automated Guess        4. Check Possible Answer (WIP)")
             print("5. Reset Board                       6. Back")
             choice = input("Select an Option (ex. 1):\n")
 
@@ -163,5 +163,7 @@ class AristocratHelper:
                 solver = self.create_empty_message()[:]
                 self.current_message = self.encrypted_message[:]
                 used_letters = {}
+            elif choice == "6":
+                break
             else:
                 print("Invalid Option\n")
