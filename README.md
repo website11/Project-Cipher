@@ -4,4 +4,7 @@ A comprehensive tool for encrypting, decrypting, and puzzle solving alike! There
 **Current Ciphers Implemented:**    
 1. Caesar Cipher (Done) - Allows for Encryption, Manual Decryption, Automatic Decryption (in file - example file here: *Src/TestCases/Caesar_Cipher*)
 2. Aristocrat Helper (Work-In-Progress)
-3. Image-Based Pigpen Cipher (Work-In-Progress)
+3. Image-Based Pigpen Cipher (Work-In-Progress)  
+
+
+Aristocrat Guess Data Sourced From: www.wordfrequency.info
