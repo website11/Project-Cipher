@@ -9,4 +9,4 @@ A comprehensive tool for encrypting, decrypting, and puzzle solving alike! There
 5. Vignere Cipher (Coming Soon!)
 
 
-Aristocrat Guess Data Sourced From: www.wordfrequency.info
+Aristocrat Guess Data Sourced From: www.wordfrequency.info and https://www.kaggle.com/datasets/rtatman/english-word-frequency/data
