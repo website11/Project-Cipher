@@ -1,5 +1,4 @@
-import CaesarCipher
-import AristocratCipher
+import CryptographyMenus as cm
 
 if __name__ == '__main__':
     print("Project Cipher\n")
@@ -12,10 +11,10 @@ if __name__ == '__main__':
 
         # Caesar Cipher
         if choice == "1":
-            CaesarCipher.caesar_cipher_menu()
+            cm.caesar_cipher_menu()
 
         elif choice == "2":
-            AristocratCipher.aristocrat_menu()
+            cm.aristocrat_menu()
 
         elif choice == "3":
             break

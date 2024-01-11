@@ -1,14 +1,7 @@
-import transformers as ppb
 
-# For DistilBERT:
-model_class, tokenizer_class, pretrained_weights = (ppb.DistilBertModel, ppb.DistilBertTokenizer, 'distilbert-base-uncased')
+# Attempt to solve cryptogram through tetragram statistics
 
-## Want BERT instead of distilBERT? Uncomment the following line:
-#model_class, tokenizer_class, pretrained_weights = (ppb.BertModel, ppb.BertTokenizer, 'bert-base-uncased')
 
-# Load pretrained model/tokenizer
-tokenizer = tokenizer_class.from_pretrained(pretrained_weights)
-model = model_class.from_pretrained(pretrained_weights)
 
 
 '''
