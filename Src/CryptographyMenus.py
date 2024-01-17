@@ -87,8 +87,9 @@ def aristocrat_menu():
     while True:
         # Options
         print("1. Create an Aristocrat")
-        print("2. Aristocrat Solver (from file)")
-        print("3. Back")
+        print("2. Manual Aristocrat Solver (from file)")
+        print("3. Automated Aristocrat Solver (from file)")
+        print("4. Back")
         choice = input("Select an Option (ex. 1):\n")
         if choice == "1":
             print("Work-In-Progress\n")
@@ -98,7 +99,7 @@ def aristocrat_menu():
                 encrypted_msg = f.read()
                 aristocrat_solver = AristocratCipher.AristocratHelper(encrypted_msg)
                 aristocrat_solver.decrypt_solver()
-        elif choice == "3":
+        elif choice == "4":
             break
         else:
             print("Invalid Option\n")
