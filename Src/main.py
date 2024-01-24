@@ -6,7 +6,8 @@ if __name__ == '__main__':
         print("Select a Cipher")
         print("1. Caesar Cipher")
         print("2. Aristocrat Cipher")
-        print("3. Exit")
+        print("3. Baconian Cipher")
+        print("4. Exit")
         choice = input("Select an Option (ex. 1):\n")
 
         # Caesar Cipher
@@ -17,6 +18,8 @@ if __name__ == '__main__':
             cm.aristocrat_menu()
 
         elif choice == "3":
+            cm.baconian_menu()
+        elif choice == "4":
             break
         else:
             print("Input Not Valid\n")

@@ -1,4 +1,4 @@
-from Cryptography import AristocratCipher, CaesarCipher
+from Cryptography import AristocratCipher, CaesarCipher, BaconianCipher
 import os
 
 
@@ -86,7 +86,7 @@ def aristocrat_menu():
     print("Aristocrat Options\n")
     while True:
         # Options
-        print("1. Create an Aristocrat")
+        print("1. Encrypt a Message")
         print("2. Manual Aristocrat Solver (from file)")
         print("3. Automated Aristocrat Solver (from file)")
         print("4. Back")
@@ -103,3 +103,20 @@ def aristocrat_menu():
             break
         else:
             print("Invalid Option\n")
+
+def baconian_menu():
+    print("Baconian Options\n")
+    while True:
+        # Options
+        print("1. Encrypt a Message")
+        print("2. Manual Baconian Solver (from file)")
+        print("3. Back")
+        choice = input("Select an Option (ex. 1):\n")
+        if choice == "1":
+            print("Work-In-Progress\n")
+        elif choice == "2":
+            message_file = input("Enter File To Decrypt: \n")
+            with open(message_file, "r") as f:
+                encrypted_msg = f.read()
+                baconian_solver = BaconianCipher.BaconianCipher(encrypted_msg)
+                baconian_solver.baconian_solver()
