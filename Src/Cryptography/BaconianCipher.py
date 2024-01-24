@@ -15,6 +15,7 @@ class BaconianCipher:
 
 
     def baconian_mapper(self, text):
+        decoded_text = ""
         baconian_dict = {
             'A': 'AAAAA', 'B': 'AAAAB', 'C': 'AAABA', 'D': 'AAABB', 'E': 'AABAA',
             'F': 'AABAB', 'G': 'AABBA', 'H': 'AABBB', 'I': 'ABAAA', 'J': 'ABAAB',
@@ -23,6 +24,12 @@ class BaconianCipher:
             'U': 'BABAA', 'V': 'BABAB', 'W': 'BABBA', 'X': 'BABBB', 'Y': 'BBAAA',
             'Z': 'BBAAB'
         }
+        for letter in text:
+            decoded_text += baconian_dict[letter.upper()] + " "
+        print(decoded_text)
+        return decoded_text
+
+
 
 
     def baconian_solver(self):
@@ -44,4 +51,21 @@ class BaconianCipher:
 
             print("1. Replace a Letter (ex. C->A)       2. Crib Menu")
             print("3. Reset Board                       4. Back")
+
             choice = input("Select an Option (ex. 1):\n")
+
+            if choice == "2":
+                print("1. Add a Crib                        2. Place Crib")
+                print("3. Back")
+
+                choice = input("Select an Option (ex. 1):\n")
+                if choice == "1":
+                    crib = input("Enter a crib name: ")
+                    if crib.isalpha():
+                        crib = crib.upper()
+                        crib_decode = self.baconian_mapper(crib)
+                    else:
+                        crib = ""
+                        crib_decode = ""
+                        print("Invalid Crib")
+
