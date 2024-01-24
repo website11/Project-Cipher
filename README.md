@@ -4,9 +4,10 @@ A comprehensive tool for encrypting, decrypting, and puzzle solving alike! There
 **Current Ciphers Implemented:**    
 1. Caesar Cipher (Done) - Allows for Encryption, Manual Decryption, Automatic Decryption (in file - example file here: *Src/TestCases/Caesar_Cipher*)
 2. Aristocrat Helper (Work-In-Progress) - Puzzle Visualizer, Manual Solver, Frequency Tables Complete; Automated Guessing WIP - Testing Version Complete; Auto-Answer Checker coming soon!
-3. XOR Cipher (Work-In-Progress)
-4. Image-Based Pigpen Cipher (Work-In-Progress)
-5. Vignere Cipher (Coming Soon!)
+3. Baconian Solver (Work-In-Progress) - Puzzle Visualizer + Manual Solver WIP
+4. XOR Cipher (Work-In-Progress)
+5. Image-Based Pigpen Cipher (Coming Soon!)
+6. Vignere Cipher (Coming Soon!)
 
 
 Aristocrat Guess Data Sourced From: www.wordfrequency.info and https://www.kaggle.com/datasets/rtatman/english-word-frequency/data
